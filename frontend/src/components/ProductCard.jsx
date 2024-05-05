@@ -19,9 +19,9 @@ const ProductCard = ({ product }) => {
 
   return (
     product && (
-      <article className=" font-mono m-5 flex flex-col items-center h-max w-max">
+      <article className=" max-w-sm md:max-w-md lg:max-w-lg font-mono flex flex-col items-center h-max w-full">
         <div className="flex justify-center">
-          <div className="block h-30 w-40 relative">
+          <div className="block h-max w-max relative">
             <div className="h-40 w-40 relative">
               <img
                 className={`${
@@ -67,24 +67,24 @@ const ProductCard = ({ product }) => {
             )}
           </div>
         </div>
-        <div className="flex flex-row justify-evenly w-40 mt-2">
-          <div className="flex justify-left w-full pl-2 items-center">
+        <div className="flex flex-row justify-evenly w-full mt-2 border border-red-500 sm:flex-row">
+          <div className="flex justify-left w-full items-center">
             <h1 className="text-20px font-mono font-bold">{product.name}</h1>
           </div>
-          <div className="flex justify-end w-full pr-2 items-center">
-            <h1
-              className={`font-bold font-mono text-20px ${
+          <div>
+            <div
+              className={`flex flex-col w-full items-end font-bold font-mono text-20px ${
                 product.discounted_price ? "line-through text-red-600" : ""
               }`}
             >
               €{product.price}
-            </h1>
-          </div>
-          {product.discounted_price && (
-            <div className="absolute bottom-0 right-4 text-20px font-bold ">
-              €{product.discounted_price}
             </div>
-          )}
+            {product.discounted_price && (
+              <div className="flex text-20px font-bold ">
+                €{product.discounted_price}
+              </div>
+            )}
+          </div>
         </div>
       </article>
     )

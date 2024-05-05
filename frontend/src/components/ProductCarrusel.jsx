@@ -61,7 +61,7 @@ const ProductCarrusel = () => {
           spaceBetween={30}
           navigation={true}
           modules={[Pagination, Navigation]}
-          className="mySwiper"
+          className="mySwiper max-w-sm md:max-w-md lg:max-w-lg"
         >
           {products
             .slice(firstDisplayedItem, firstDisplayedItem + itemsDisplayed)
